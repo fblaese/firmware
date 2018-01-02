@@ -5,7 +5,7 @@
 uci batch <<EOF
   set alfred.alfred=alfred
   set alfred.alfred.interface='br-mesh'
-  set alfred.alfred.mode='slave'
+  set alfred.alfred.mode='master'
   set alfred.alfred.batmanif='none'
   set alfred.alfred.start_vis='0'
   set alfred.alfred.run_facters='0'
