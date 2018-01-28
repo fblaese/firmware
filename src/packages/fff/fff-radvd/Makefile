@@ -4,11 +4,11 @@ PKG_NAME:=fff-radvd
 PKG_VERSION:=1
 PKG_RELEASE:=1
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/fff-radvd
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/fff-radvd
+define Package/$(PKG_NAME)
     SECTION:=base
     CATEGORY:=Freifunk
     TITLE:=Freifunk-Franken radvd
@@ -16,7 +16,7 @@ define Package/fff-radvd
     DEPENDS:=+radvd
 endef
 
-define Package/fff-radvd/description
+define Package/$(PKG_NAME)/description
     This is the fff-radvd for the Freifunk Franken Firmware
     It is used to configure radvd for use as gateway.
 endef
@@ -33,8 +33,8 @@ define Build/Compile
     # nothing
 endef
 
-define Package/fff-radvd/install
+define Package/$(PKG_NAME)/install
     $(CP) ./files/* $(1)/
 endef
 
-$(eval $(call BuildPackage,fff-radvd))
+$(eval $(call BuildPackage,$(PKG_NAME)))
