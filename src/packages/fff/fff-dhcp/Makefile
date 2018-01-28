@@ -4,11 +4,11 @@ PKG_NAME:=fff-dhcp
 PKG_VERSION:=1
 PKG_RELEASE:=1
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/fff-dhcp
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/fff-dhcp
+define Package/$(PKG_NAME)
     SECTION:=base
     CATEGORY:=Freifunk
     TITLE:=Freifunk-Franken dhcp
@@ -16,7 +16,7 @@ define Package/fff-dhcp
     DEPENDS:=+dnsmasq
 endef
 
-define Package/fff-dhcp/description
+define Package/$(PKG_NAME)/description
     This is the fff-dhcp for the Freifunk Franken Firmware
     It is used to configure dnsmasq for use as gateway.
 endef
@@ -33,8 +33,8 @@ define Build/Compile
     # nothing
 endef
 
-define Package/fff-dhcp/install
+define Package/$(PKG_NAME)/install
     $(CP) ./files/* $(1)/
 endef
 
-$(eval $(call BuildPackage,fff-dhcp))
+$(eval $(call BuildPackage,$(PKG_NAME)))

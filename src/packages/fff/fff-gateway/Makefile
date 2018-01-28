@@ -4,11 +4,11 @@ PKG_NAME:=fff-gateway
 PKG_VERSION:=0.0.1
 PKG_RELEASE:=1
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/fff-gateway
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/fff-gateway
+define Package/$(PKG_NAME)
     SECTION:=base
     CATEGORY:=Freifunk
     TITLE:= Freifunk-Franken gateway configuration
@@ -16,7 +16,7 @@ define Package/fff-gateway
     DEPENDS:=+fff-network
 endef
 
-define Package/fff-gateway/description
+define Package/$(PKG_NAME)/description
     This package configures the gateway
 endef
 
@@ -32,8 +32,8 @@ define Build/Compile
 	# nothing
 endef
 
-define Package/fff-gateway/install
+define Package/$(PKG_NAME)/install
 	$(CP) ./files/* $(1)/
 endef
 
-$(eval $(call BuildPackage,fff-gateway))
+$(eval $(call BuildPackage,$(PKG_NAME)))

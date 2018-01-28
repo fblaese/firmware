@@ -4,11 +4,11 @@ PKG_NAME:=fff-openvpn
 PKG_VERSION:=1
 PKG_RELEASE:=1
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/fff-openvpn
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/fff-openvpn
+define Package/$(PKG_NAME)
     SECTION:=base
     CATEGORY:=Freifunk
     TITLE:=Freifunk-Franken openvpn configuration script
@@ -16,7 +16,7 @@ define Package/fff-openvpn
     DEPENDS:=+openvpn-mbedtls
 endef
 
-define Package/fff-openvpn/description
+define Package/$(PKG_NAME)/description
     This is the openvpn package for the Freifunk Franken Firmware
 endef
 
@@ -32,8 +32,8 @@ define Build/Compile
     # nothing
 endef
 
-define Package/fff-openvpn/install
+define Package/$(PKG_NAME)/install
     # $(CP) ./files/* $(1)/
 endef
 
-$(eval $(call BuildPackage,fff-openvpn))
+$(eval $(call BuildPackage,$(PKG_NAME)))

@@ -4,11 +4,11 @@ PKG_NAME:=fff-babeld
 PKG_VERSION:=0.0.1
 PKG_RELEASE:=1
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/fff-babeld
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/fff-babeld
+define Package/$(PKG_NAME)
     SECTION:=base
     CATEGORY:=Freifunk
     TITLE:=Freifunk-Franken babeld configuration example
@@ -16,7 +16,7 @@ define Package/fff-babeld
     DEPENDS:=+babeld
 endef
 
-define Package/fff-babeld/description
+define Package/$(PKG_NAME)/description
     This is the Freifunk Franken Firmware babeld package.
     This package provides an example babeld configuration.
 endef
@@ -33,8 +33,8 @@ define Build/Compile
     # nothing
 endef
 
-define Package/fff-babeld/install
+define Package/$(PKG_NAME)/install
     $(CP) ./files/* $(1)/
 endef
 
-$(eval $(call BuildPackage,fff-babeld))
+$(eval $(call BuildPackage,$(PKG_NAME)))

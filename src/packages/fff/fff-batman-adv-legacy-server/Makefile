@@ -4,11 +4,11 @@ PKG_NAME:=fff-batman-adv-legacy-server
 PKG_VERSION:=1
 PKG_RELEASE:=1
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/fff-batman-adv-legacy-server
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/fff-batman-adv-legacy-server
+define Package/$(PKG_NAME)
     SECTION:=base
     CATEGORY:=Freifunk
     TITLE:=Freifunk-Franken batman-adv-legacy-server
@@ -16,7 +16,7 @@ define Package/fff-batman-adv-legacy-server
     DEPENDS:=+fff-batman-adv-legacy
 endef
 
-define Package/fff-batman-adv-legacy-server/description
+define Package/$(PKG_NAME)/description
     This is the batman-adv-legacy-server for the Freifunk Franken Firmware
     It is used to re-configure batman-adv-legacy package as used in a server.
 endef
@@ -33,8 +33,8 @@ define Build/Compile
 	# nothing
 endef
 
-define Package/fff-batman-adv-legacy-server/install
+define Package/$(PKG_NAME)/install
 	$(CP) ./files/* $(1)/
 endef
 
-$(eval $(call BuildPackage,fff-batman-adv-legacy-server))
+$(eval $(call BuildPackage,$(PKG_NAME)))
