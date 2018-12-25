@@ -358,7 +358,7 @@ configure() {
 
         # add babel interface
         uci set babeld.$name=interface
-        uci set babeld.$name.ifname=$name
+        uci set babeld.$name.ifname=$iface
         uci set babeld.$name.type=$type
     }
 
