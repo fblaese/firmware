@@ -54,6 +54,7 @@ define Package/fff-layer3
 			 +fff-babeld \
 			 +fff-ra \
 			 +fff-wireguard \
+			 +fff-gre \
 			 +iperf3 \
 			 +ip-full \
 			 +tcpdump \
@@ -65,9 +66,6 @@ define Package/fff-layer3
 			 +iptables-mod-filter \
 			 +iptables-mod-ipopt \
 			 +iptables-mod-conntrack-extra \
-			 +gre \
-			 +@PACKAGE_grev4 \
-			 +@PACKAGE_grev6 \
 			 +fff-alfred-monitoring-proxy
 	VARIANT:=layer3
 endef
