@@ -35,7 +35,6 @@ define Package/fff-node
 	$(call Package/fff/base)
 	TITLE+=(Home node)
 	DEPENDS+=+fff-fastd \
-			 +fff-firewall \
 			 +fff-batman-adv \
 			 +fff-hoods
 	VARIANT:=homenode
