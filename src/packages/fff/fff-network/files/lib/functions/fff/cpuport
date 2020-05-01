@@ -17,6 +17,7 @@ case "$BOARD" in
 		;;
 	cpe210-v2|\
 	cpe210-v3|\
+	re450-v1|\
 	tl-mr3020-v1|\
 	tl-wa850re-v1|\
 	tl-wa860re-v1|\

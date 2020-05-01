@@ -44,6 +44,9 @@ case "$BOARD" in
     unifiac-lite)
         BOARD=ubnt-unifiac-lite
         ;;
+    re450)
+        BOARD=re450-v1
+        ;;
     tl-wa850re)
         BOARD=tl-wa850re-v1
         ;;
